@@ -114,11 +114,52 @@ ls: cannot open directory '/home/root/': Permission denied
 ```
 
 🌞 Vérifier que
-- commande : which
-[quentin@localhost ~]$ which sleep
+```
+[root@localhost ~]$ which sleep
 /usr/bin/sleep
-[quentin@localhost ~]$ which ssh
+[root@localhost ~]$ which ssh
 /usr/bin/ssh
-[quentin@localhost ~]$ which ping
+[root@localhost ~]$ which ping
 /usr/bin/ping
-[quentin@localhost ~]$
+[root@localhost ~]$
+```
+
+**II. Paquets**
+
+*🌞 Installer le paquet*
+```
+[root@localhost ~] sudo dnf install git 
+```
+*🌞 Utiliser une commande pour lancer Git*
+```
+[root@localhost ~] cd /usr/bin/git
+```
+*🌞 Installer le paquet nginx*
+
+```
+[root@localhost ~] sudo dnf install nginx
+```
+*🌞 Déterminer*
+```
+[root@localhost ~] cd /var/log/nginx
+[root@localhost ~] cd /usr/sbin/nginx
+```
+*🌞 Mais aussi déterminer l'adresse http ou https des serveurs où vous téléchargez des paquets*
+
+```
+[root@localhost ~]$ nslookup nginx.com
+Server:         8.8.8.8
+Address:        8.8.8.8#53
+
+Non-authoritative answer:
+Name:   nginx.com
+Address: 185.56.152.165
+
+[root@localhost ~]$ nslookup github.com
+Server:         8.8.8.8
+Address:        8.8.8.8#53
+
+Non-authoritative answer:
+Name:   github.com
+Address: 140.82.121.3
+```
