@@ -113,7 +113,7 @@ ls: cannot open directory '/home/root/': Permission denied
 /home/papier_alu/.bashrc
 ```
 
-🌞 Vérifier que
+*🌞 Vérifier que*
 ```
 [root@localhost ~]$ which sleep
 /usr/bin/sleep
@@ -162,4 +162,58 @@ Address:        8.8.8.8#53
 Non-authoritative answer:
 Name:   github.com
 Address: 140.82.121.3
+```
+
+## Partie 3 : Poupée russe 
+
+*🌞 Récupérer le fichier meow*
+```
+[root@localhost ~] sudo dnf install unzip
+[root@localhost ~] sudo dnf install wget
+
+[root@localhost ~] sudo wget https://gitlab.com/it4lik/b1-linux-2023//raw/master/tp/2/meow?inline=false
+
+[root@localhost ~]$ sudo wget https://gitlab.com/it4lik/b1-linux-2023/-/raw/master/tp/2/meow?inline=false
+--2024-01-28 20:51:17--  https://gitlab.com/it4lik/b1-linux-2023/-/raw/master/tp/2/meow?inline=false
+Resolving gitlab.com (gitlab.com)... 172.65.251.78, 2606:4700:90:0:f22e:fbec:5bed:a9b9
+Connecting to gitlab.com (gitlab.com)|172.65.251.78|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 18016947 (17M) [application/octet-stream]
+Saving to: ‘meow?inline=false’
+
+meow?inline=false             100%[=================================================>]  17.18M  23.0MB/s    in 0.7s
+
+2024-01-28 28 20:51:18 (23.0 MB/s) - ‘meow?inline=false’ saved [18016947/18016947]
+
+[root@localhost ~] mv 'meow?inline=false' meow
+
+```
+*🌞 Trouver le dossier dawa/*
+```
+- commande : file meow
+
+[root@localhost ~]$ file meow
+meow: Zip archive data, at least v2.0 to extract
+[root@localhost ~]$ mv meow meow.zip
+meow.zip
+[root@localhost ~]$ sudo unzip meow.zip
+[sudo] password for root:
+Archive:  meow.zip
+  inflating: meow
+```
+
+*🌞 Dans le dossier dawa/, déterminer le chemin vers*
+
+```
+[root@localhost ~]$ find -size 15M
+./folder31/19/file39
+
+[root@localhost ~]$ grep "777777" -r
+folder43/38/file41:77777777777
+
+[root@localhost ~]$ find -name cookie
+./folder14/25/cookie
+
+[root@localhost ~]$ find -name ".*"
+./folder32/14/.hidden_file`
 ```
